@@ -5,7 +5,7 @@ const port = 3010;
 const server = require('http').createServer(app);
 const socket = require('socket.io-client')(rover);
 
-app.use('/static', express.static('public'));
+app.use('/static', express.static('src'));
 app.get('/', (req, res) => res.send('Welcome to the roverDigital Client'));
 
 
