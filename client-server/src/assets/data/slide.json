@@ -1,0 +1,27 @@
+[
+  {
+    "_id": 1,
+    "name": "sunset",
+    "duration": 5000,
+    "content": {
+      "type": "image",
+      "url": "src/assets/img/rocks.jpg"
+    },
+    "timestamp": "time",
+    "version": 1,
+    "size": "full"
+  },
+
+  {
+    "_id": 2,
+    "name": "FIWT",
+    "duration": 2000,
+    "content": {
+      "type": "image",
+      "url": "src/assets/img/yosemite.jpg"
+    },
+    "timestamp": "time",
+    "version": 1,
+    "size": "full"
+  }
+]
