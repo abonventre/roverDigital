@@ -24,7 +24,7 @@ class ImageSlide extends React.Component {
 
   render() {
     let background = {
-      backgroundImage: `url(${this.state.image})`,
+      backgroundImage: `url(${this.props.imageUrl})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       width: '100%',

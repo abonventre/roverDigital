@@ -10,35 +10,34 @@ class Slider extends React.Component {
     super(props);
 
     this.state = {
-      slideCount: 1
+      slideCount: 0
     };
   }
 
   componentDidMount() {
     //console.log(this.state);
-    setInterval(this.incrementSlideCount.bind(this), slides[1].duration);
+    //setInterval(this.incrementSlideCount.bind(this), slides[1].duration);
+    setTimeout(this.incrementSlideCount.bind(this), slides[0].duration);
   }
 
   incrementSlideCount() {
     let newSlide = this.state.slideCount + 1;
-    if(newSlide > 5) {
-      newSlide = 1;
+    if(newSlide >= slides.length) {
+      newSlide = 0;
     }
     this.setState({slideCount: newSlide});
     //console.log(this.state);
-    let key = "duration";
-    console.log(slides[1][key]);
-    //
+    //let key = "duration";
+    //console.log(slides[1][key]);
+    setTimeout(this.incrementSlideCount.bind(this), slides[newSlide].duration);
   }
 
   render() {
     return (
       <div className="slider">
         Slide: { this.state.slideCount }
-        { this.state.slideCount === 1 ? <ImageSlide imageUrl='assets/img/yosemite.jpg' /> : null }
-        { this.state.slideCount === 2 ? <ImageSlide imageUrl='assets/img/rocks.jpg' /> : null }
-        { this.state.slideCount === 3 ? <ImageSlide imageUrl='assets/img/flowers.jpg' /> : null }
-        { this.state.slideCount === 4 ? <ImageSlide imageUrl='assets/data/slide.json' /> : null}
+        { slides[this.state.slideCount].content.url }
+        <ImageSlide imageUrl={slides[this.state.slideCount].content.url} />
       </div>
     );
   }
