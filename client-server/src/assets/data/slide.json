@@ -2,7 +2,6 @@
   {
     "_id": 1,
     "name": "sunset",
-    "duration": 1000,
     "content": {
       "type": "image",
       "url": "assets/img/rocks.jpg"
@@ -18,7 +17,6 @@
   {
     "_id": 2,
     "name": "FIWT",
-    "duration": 3000,
     "content": {
       "type": "image",
       "url": "assets/img/yosemite.jpg"
@@ -34,7 +32,6 @@
   {
     "_id": 3,
     "name": "FI",
-    "duration": 1000,
     "content": {
       "type": "image",
       "url": "assets/img/flowers.jpg"
@@ -50,7 +47,6 @@
   {
     "_id": 4,
     "name": "WT",
-    "duration": 3000,
     "content": {
       "type": "image",
       "url": "assets/img/yosemite.jpg"
