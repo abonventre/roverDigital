@@ -2,8 +2,8 @@ import React from 'react';
 import ImageSlide from './ImageSlide.jsx';
 
 let slides = require("../assets/data/slide.json");
+//let playlist = require("../assets/data/playlist.json");
 //console.log("slides:", slides);
-
 class Slider extends React.Component {
 
   constructor(props) {
@@ -16,7 +16,6 @@ class Slider extends React.Component {
 
   componentDidMount() {
     //console.log(this.state);
-    //setInterval(this.incrementSlideCount.bind(this), slides[1].duration);
     setTimeout(this.incrementSlideCount.bind(this), slides[0].duration);
   }
 

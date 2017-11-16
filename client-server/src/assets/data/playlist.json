@@ -2,15 +2,31 @@
   {
     "_id": 1,
     "name": "Main Terminal",
-    "slides": [1,2],
+    "slides": [
+      {
+        "slideID": 1,
+        "duration": 1000
+      },
+      {
+        "slideID": 2,
+        "duration": 4000
+      },
+      {
+        "slideID": 3,
+        "duration": 1000
+      },
+      {
+        "slideID": 4,
+        "duration": 4000
+      }],
     "timestamp": "time",
     "version": 1
   },
-  
+
   {
     "_id": 2,
     "name": "West Terminal",
-    "slides": [1],
+    "slides": [],
     "timestamp": "time",
     "version": 1
   }
