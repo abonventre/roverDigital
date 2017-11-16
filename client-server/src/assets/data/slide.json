@@ -9,43 +9,58 @@
     },
     "timestamp": "time",
     "version": 1,
-    "size": "full"
+    "orientation": "landscape",
+    "size": {
+      "height": 1080,
+      "width": 1920
+    }
   },
-
   {
     "_id": 2,
     "name": "FIWT",
-    "duration": 1000,
+    "duration": 3000,
     "content": {
       "type": "image",
       "url": "assets/img/yosemite.jpg"
     },
     "timestamp": "time",
     "version": 1,
-    "size": "full"
+    "orientation": "landscape",
+    "size": {
+      "height": 1080,
+      "width": 1920
+    }
   },
   {
     "_id": 3,
     "name": "FI",
-    "duration": 3000,
+    "duration": 1000,
     "content": {
       "type": "image",
       "url": "assets/img/flowers.jpg"
     },
     "timestamp": "time",
     "version": 1,
-    "size": "full"
+    "orientation": "landscape",
+    "size": {
+      "height": 1080,
+      "width": 1920
+    }
   },
   {
     "_id": 4,
     "name": "WT",
-    "duration": 2000,
+    "duration": 3000,
     "content": {
       "type": "image",
       "url": "assets/img/yosemite.jpg"
     },
     "timestamp": "time",
     "version": 1,
-    "size": "full"
+    "orientation": "landscape",
+    "size": {
+      "height": 1080,
+      "width": 1920
+    }
   }
 ]
