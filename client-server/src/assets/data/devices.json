@@ -1,0 +1,17 @@
+[
+  {
+    "_id": 1,
+    "name": "svr",
+    "location": "server room",
+    "userLevel": "server",
+    "version": 1,
+  },
+
+  {
+    "_id": 2,
+    "name": "tv1",
+    "location": "dock",
+    "userLevel": "client",
+    "version": 1,
+  }
+]

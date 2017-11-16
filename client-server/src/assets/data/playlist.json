@@ -1,0 +1,17 @@
+[
+  {
+    "_id": 1,
+    "name": "Main Terminal",
+    "slides": [1,2],
+    "timestamp": "time",
+    "version": 1
+  },
+  
+  {
+    "_id": 2,
+    "name": "West Terminal",
+    "slides": [1],
+    "timestamp": "time",
+    "version": 1
+  }
+]
