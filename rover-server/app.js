@@ -1,21 +1,19 @@
 const express = require('express');
+const rover = 'http://localhost:3000';
 const app = express();
-const port = 3000;
+const path = require('path');
+const port = 3010;
 const server = require('http').createServer(app);
-const io = require('socket.io')(server);
+const socket = require('socket.io-client')(rover);
 
-io.on('connection', (client) => {
-  client.on('connection', () => console.log('connection established'));
-  client.on('event', data => console.log(`Data: ${data}`));
-  client.on('disconnect', () => console.log('connected lost.'));
-});
+console.log(path.join(__dirname, 'src'));
 
-app.get('/test', (req, res) => {
-  console.log('Send broadcast');
-  io.emit('event', 'Test-event');
-  res.send('Test Route');
-});
+app.use('/static', express.static(path.join(__dirname, '../rover-app/src')));
+app.get('/', (req, res) => res.send('Welcome to the roverDigital Client'));
 
-app.get('/', (req, res) => res.send('Hello World!'));
+
+socket.on('connect', () => console.log('connected'));
+socket.on('event', data => console.log(`Data: ${data}`));
+socket.on('disconnect', () => console.log('disconnect'));
 
 server.listen(port, () => console.log(`Server running on ${port}`));
