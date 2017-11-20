@@ -57,4 +57,4 @@ typings/
 # dotenv environment variables file
 .env
 
-client-server/src/public/
+rover-app/src/public/
