@@ -1,7 +1,10 @@
 var webpack = require('webpack');
-var cssnext = require('postcss-cssnext');
-var postcssFocus = require('postcss-focus');
-var postcssReporter = require('postcss-reporter');
+var path = require('path');
+
+var BUILD_DIR = path.resolve(__dirname, 'client\\public');
+var APP_DIR = path.resolve(__dirname, 'client');
+
+console.log(APP_DIR + '\\index.jsx');
 
 module.exports = {
     devtool: 'cheap-module-eval-source-map',
@@ -11,7 +14,7 @@ module.exports = {
             'eventsource-polyfill',
             'webpack-hot-middleware/client',
             'webpack/hot/only-dev-server',
-            './client/index.js',
+            APP_DIR + '\\index.jsx',
         ],
         vendor: [
             'react',
@@ -20,33 +23,24 @@ module.exports = {
     },
 
     output: {
-        path: __dirname,
-        filename: 'app.js',
-        publicPath: 'http://0.0.0.0:8000/',
+        path: BUILD_DIR,
+        filename: 'bundle.js'
     },
 
-    resolve: {
-        extensions: ['', '.js', '.jsx'],
-        modules: [
-            'client',
-            'node_modules',
-        ],
-    },
+    // resolve: {
+    //     extensions: ['.js', '.jsx'],
+    //     modules: [
+    //         'client',
+    //         'node_modules',
+    //     ],
+    // },
 
     module: {
         loaders: [
             {
-                test: /\.css$/,
-                exclude: /node_modules/,
-                loader: 'style-loader!css-loader?localIdentName=[name]__[local]__[hash:base64:5]&modules&importLoaders=1&sourceMap!postcss-loader',
-            }, {
-                test: /\.css$/,
-                include: /node_modules/,
-                loaders: ['style-loader', 'css-loader'],
-            }, {
-                test: /\.jsx*$/,
-                exclude: [/node_modules/, /.+\.config.js/],
-                loader: 'babel',
+              test : /\.jsx?/,
+              include : APP_DIR,
+              loader : 'babel-loader'
             }, {
                 test: /\.(jpe?g|gif|png|svg)$/i,
                 loader: 'url-loader?limit=10000',
@@ -69,16 +63,6 @@ module.exports = {
                 CLIENT: JSON.stringify(true),
                 'NODE_ENV': JSON.stringify('development'),
             }
-        }),
-    ],
-
-    postcss: () => [
-        postcssFocus(),
-        cssnext({
-            browsers: ['last 2 versions', 'IE > 10'],
-        }),
-        postcssReporter({
-            clearMessages: true,
         }),
     ],
 };

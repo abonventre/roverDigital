@@ -4,6 +4,8 @@ var path = require('path');
 var BUILD_DIR = path.resolve(__dirname, 'client/public');
 var APP_DIR = path.resolve(__dirname, 'client');
 
+console.log(BUILD_DIR);
+console.log(APP_DIR);
 console.log('Test Webpack');
 
 module.exports = {

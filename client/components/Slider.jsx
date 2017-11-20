@@ -58,7 +58,7 @@ class Slider extends React.Component {
   render() {
     return (
       <div className="slider">
-        Slidexxsx: { this.state.slideCount }
+        Slidexdsadsaxsx: { this.state.slideCount }
         { slides[this.state.slideCount].content.url }
         <ImageSlide imageUrl={slides[this.state.slideCount].content.url} />
       </div>

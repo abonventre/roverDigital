@@ -7,14 +7,21 @@ const server = require('http').createServer(app);
 const socket = require('socket.io-client')(rover);
 const mongoose = require('mongoose');
 
-const flags = require("node-flags");
-let type = flags.get('type');
+import webpack from 'webpack';
+import config from '../webpack.config.dev';
+import webpackDevMiddleware from 'webpack-dev-middleware';
+import webpackHotMiddleware from 'webpack-hot-middleware';
 
-console.log('type:', type);
+// Run Webpack dev server in development mode
+if (process.env.NODE_ENV === 'development') {
+  const compiler = webpack(config);
+  app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }));
+  app.use(webpackHotMiddleware(compiler));
+}
 
 mongoose.connect('mongodb://localhost/roverDigital');
 
-console.log(path.join(__dirname, 'src'));
+console.log(path.join(__dirname,  '../client'));
 
 app.use('/static', express.static(path.join(__dirname, '../client')));
 app.get('/', (req, res) => res.send('Welcomes to the roverDigital Client'));
