@@ -1,10 +1,12 @@
 var webpack = require('webpack');
 var path = require('path');
 
-var BUILD_DIR = path.resolve(__dirname, 'rover-app/src/public');
-var APP_DIR = path.resolve(__dirname, 'rover-app/src/app');
+var BUILD_DIR = path.resolve(__dirname, 'client/public');
+var APP_DIR = path.resolve(__dirname, 'client');
 
-var config = {
+console.log('Test Webpack');
+
+module.exports = {
   entry: APP_DIR + '/index.jsx',
   output: {
     path: BUILD_DIR,
@@ -16,9 +18,12 @@ var config = {
         test : /\.jsx?/,
         include : APP_DIR,
         loader : 'babel-loader'
+      },
+      {
+        test: /\.js?/,
+        include: APP_DIR,
+        loader: 'babel-loader'
       }
     ]
   }
 };
-
-module.exports = config;
