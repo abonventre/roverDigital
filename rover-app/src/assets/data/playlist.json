@@ -8,15 +8,15 @@
     },
     {
       "slideID": 2,
-      "duration": 4000
+      "duration": 2000
     },
     {
       "slideID": 3,
-      "duration": 1000
+      "duration": 3000
     },
     {
-      "slideID": 4,
-      "duration": 4000
+      "slideID": 5,
+      "duration": 3000
     }],
   "timestamp": "time",
   "version": 1

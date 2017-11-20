@@ -17,20 +17,19 @@ class Slider extends React.Component {
 
   gatherSlides() {
     console.log("getting slides");
-    //let show = [];
-    for (let i = 0; i < slides.length; i++) {
-      // console.log(playlist.slides[i].slideID);
-      // console.log(slides[i]._id);
-      for (let j = 0; j < playlist.slides.length; j++) {
+    for (let i = 0; i < slides.length; i++) { // Checks slide.json for "_id"
+      for (let j = 0; j < playlist.slides.length; j++) { // Checks playslist.json for "slideID"
         if (playlist.slides[j].slideID === slides[i]._id) {
-          console.log("in the loop");
-          var copy = Object.assign({}, slides[i], playlist.slides[j]);
-          //console.log(copy);
-          // console.log(slides);
-          // console.log(playlist.slides);
+          console.log("found match");
+          let slideList = Object.assign(playlist.slides[j], slides[i]);
+          console.log("slidelist: ",slideList);
+        }
+        else {
+          console.log("no match");
         }
       }
     };
+    console.log(playlist.slides);
   }
 
   componentDidMount() {
@@ -40,15 +39,15 @@ class Slider extends React.Component {
 
   incrementSlideCount() {
     let newSlide = this.state.slideCount + 1;
-    if(newSlide >= slides.length) {
+    if(newSlide >= playlist.slides.length) {
       newSlide = 0;
     }
     this.setState({slideCount: newSlide});
     //console.log(this.state);
     // let key = "duration";
     // console.log(slides[1][key]);
-    console.log(newSlide);
-    console.log(playlist.slides[newSlide].duration);
+    console.log('slide:', newSlide);
+    //console.log('playlist slide', playlist.slides[newSlide].duration, playlist.slides[newSlide].slideID);
     //console.log(slides[newSlide]._id);
     //console.log(playlist.slides[newSlide].slideID);
 
@@ -59,12 +58,14 @@ class Slider extends React.Component {
     return (
       <div className="slider">
         Slide: { this.state.slideCount }
-        { slides[this.state.slideCount].content.url }
-        <ImageSlide imageUrl={slides[this.state.slideCount].content.url} />
+        <br />
+        SlideID: { playlist.slides[this.state.slideCount].slideID }
+        <br />
+        { playlist.slides[this.state.slideCount].content.url }
+        <ImageSlide imageUrl={ playlist.slides[this.state.slideCount].content.url } />
       </div>
-    );
+    );//<VideoSlide videoUrl={ playlist.slides[this.state.slideCount].content.url } />
   }
-
 }
 
 export default Slider;

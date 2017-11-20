@@ -49,7 +49,22 @@
     "name": "WT",
     "content": {
       "type": "image",
-      "url": "assets/img/yosemite.jpg"
+      "url": "assets/img/jellyfish.jpg"
+    },
+    "timestamp": "time",
+    "version": 1,
+    "orientation": "landscape",
+    "size": {
+      "height": 1080,
+      "width": 1920
+    }
+  },
+  {
+    "_id": 5,
+    "name": "Water",
+    "content": {
+      "type": "video",
+      "url": "assets/vid/Hand.jpg"
     },
     "timestamp": "time",
     "version": 1,
