@@ -21,6 +21,9 @@ app.use('/', express.static(path.join(__dirname, '../rover-app/src')));
 app.use('/', express.static(path.join(__dirname, '../rover-app/client-config')));
 // app.get('/', (req, res) => res.send('Welcome to the roverDigital Client'));
 
+app.get('*', function(req, res) {
+  res.sendFile(path.join(__dirname, '../rover-app/src/index.html'));
+});
 
 socket.on('connect', () => console.log('connected'));
 socket.on('event', data => console.log(`Data: ${data}`));

@@ -18,10 +18,13 @@ io.on('connection', (client) => {
   client.on('disconnect', () => console.log('connected lost.'));
 });
 
+require('./routes').default(app);
+
 app.use('/', express.static(path.join(__dirname, '../rover-app/src')));
 app.use('/', express.static(path.join(__dirname, '../rover-app/server-config')));
-
-require('./routes').default(app);
+app.get('*', function(req, res) {
+  res.sendFile(path.join(__dirname, '../rover-app/src/index.html'));
+});
 
 app.get('/test', (req, res) => {
   console.log('Send broadcast');
