@@ -59,6 +59,8 @@ class Slider extends React.Component {
   render() {
     return (
       <div className="slider">
+        Config: { globalConfig.mode }
+        <br />
         Slide: { this.state.slideCount }
         <br />
         SlideID: { playlist.slides[this.state.slideCount].slideID }

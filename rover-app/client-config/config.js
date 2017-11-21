@@ -1,4 +1,4 @@
 let globalConfig = {
   'mode': 'client',
-  'port': 3000
+  'port': 3010
 };
