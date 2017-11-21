@@ -58,6 +58,7 @@ let slides = [
       "height": 1080,
       "width": 1920
     }
+
   },
   {
     "_id": 5,
