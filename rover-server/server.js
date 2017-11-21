@@ -19,12 +19,7 @@ io.on('connection', (client) => {
 });
 
 app.use('/static', express.static(path.join(__dirname, '../rover-app/src')));
-
-app.get('/config', (req, res) => {
-  res.json({
-    'mode': 'server'
-  });
-});
+app.use('/static', express.static(path.join(__dirname, '../rover-app/server-config')));
 
 require('./routes').default(app);
 

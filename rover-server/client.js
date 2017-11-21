@@ -15,15 +15,10 @@ mongoose.connection.on('error', function(err) {
 
 console.log(path.join(__dirname, 'src'));
 
-app.get('/config', (req, res) => {
-  res.json({
-    'mode': 'client'
-  });
-});
-
 require('./routes').default(app);
 
 app.use('/static', express.static(path.join(__dirname, '../rover-app/src')));
+app.use('/static', express.static(path.join(__dirname, '../rover-app/client-config')));
 app.get('/', (req, res) => res.send('Welcome to the roverDigital Client'));
 
 

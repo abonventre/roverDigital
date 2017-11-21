@@ -4,6 +4,8 @@ import ImageSlide from './ImageSlide.jsx';
 let slides = require("../assets/data/slide.json");
 let playlist = require("../assets/data/playlist.json");
 
+console.log(globalConfig);
+
 class Slider extends React.Component {
 
   constructor(props) {
