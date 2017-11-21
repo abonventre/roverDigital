@@ -17,9 +17,9 @@ console.log(path.join(__dirname, 'src'));
 
 require('./routes').default(app);
 
-app.use('/static', express.static(path.join(__dirname, '../rover-app/src')));
-app.use('/static', express.static(path.join(__dirname, '../rover-app/client-config')));
-app.get('/', (req, res) => res.send('Welcome to the roverDigital Client'));
+app.use('/', express.static(path.join(__dirname, '../rover-app/src')));
+app.use('/', express.static(path.join(__dirname, '../rover-app/client-config')));
+// app.get('/', (req, res) => res.send('Welcome to the roverDigital Client'));
 
 
 socket.on('connect', () => console.log('connected'));

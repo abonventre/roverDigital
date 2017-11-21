@@ -18,8 +18,8 @@ io.on('connection', (client) => {
   client.on('disconnect', () => console.log('connected lost.'));
 });
 
-app.use('/static', express.static(path.join(__dirname, '../rover-app/src')));
-app.use('/static', express.static(path.join(__dirname, '../rover-app/server-config')));
+app.use('/', express.static(path.join(__dirname, '../rover-app/src')));
+app.use('/', express.static(path.join(__dirname, '../rover-app/server-config')));
 
 require('./routes').default(app);
 
@@ -28,7 +28,5 @@ app.get('/test', (req, res) => {
   io.emit('event', 'Test-event');
   res.send('Test Route');
 });
-
-app.get('/', (req, res) => res.send('Hello World!'));
 
 server.listen(port, () => console.log(`Server running on ${port}`));

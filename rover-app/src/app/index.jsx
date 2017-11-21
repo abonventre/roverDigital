@@ -2,18 +2,22 @@ import React from 'react';
 import {render} from 'react-dom';
 import AwesomeComponent from './AwesomeComponent.jsx';
 import Slider from './Slider.jsx';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+
+require('../assets/css/main.scss');
 
 class App extends React.Component {
   render () {
     return (
-      <BrowserRouter>
+      <Router>
         <div>
+          <Link to='/'>Home</Link>
+          <Link to='/client'>Client</Link>
           <p> Hello React Project</p>
           <AwesomeComponent />
-          <Slider />
+          <Route path="/client" component={ Slider } />
         </div>
-      </BrowserRouter>
+      </Router>
     );
   }
 }
