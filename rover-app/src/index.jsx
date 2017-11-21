@@ -1,10 +1,10 @@
 import React from 'react';
 import {render} from 'react-dom';
-import AwesomeComponent from './AwesomeComponent.jsx';
-import Slider from './Slider.jsx';
+import AwesomeComponent from './components/AwesomeComponent.jsx';
+import Slider from './components/Slider.jsx';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
-require('../assets/css/main.scss');
+require('./assets/css/main.scss');
 
 class App extends React.Component {
   render () {

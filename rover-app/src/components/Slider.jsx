@@ -1,10 +1,13 @@
 import React from 'react';
 import ImageSlide from './ImageSlide.jsx';
 
-let slides = require("../assets/data/slide.json");
-let playlist = require("../assets/data/playlist.json");
-
 console.log(globalConfig);
+
+// let slides = require("../assets/data/slide.json");
+import slides from '../assets/data/slide.js';
+import playlist from '../assets/data/playlist.js';
+// import * as playlist from '../assets/data/playlist.json';
+console.log(playlist);
 
 class Slider extends React.Component {
 

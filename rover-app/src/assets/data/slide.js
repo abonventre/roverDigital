@@ -1,4 +1,4 @@
-[
+let slides = [
   {
     "_id": 1,
     "name": "sunset",
@@ -75,3 +75,5 @@
     }
   }
 ]
+
+export default slides;

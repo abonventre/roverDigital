@@ -1,4 +1,4 @@
-{
+let playlist = {
   "_id": 1,
   "name": "Main Terminal",
   "slides": [
@@ -21,3 +21,5 @@
   "timestamp": "time",
   "version": 1
 }
+
+export default playlist;
