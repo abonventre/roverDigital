@@ -2,8 +2,9 @@ import React from 'react';
 import {render} from 'react-dom';
 import AwesomeComponent from './components/AwesomeComponent.jsx';
 import Slider from './components/Slider.jsx';
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Link, Route, Redirect } from 'react-router-dom';
 
+console.log(globalConfig);
 require('./assets/css/main.scss');
 
 class App extends React.Component {
@@ -16,6 +17,18 @@ class App extends React.Component {
           <p> Hello React Project</p>
           <AwesomeComponent />
           <Route path="/client" component={ Slider } />
+          <Route path="/" render={ ()=> {
+            switch(globalConfig.mode) {
+              case "client":
+                return <Redirect to="/client" />
+              break;
+              case "server":
+                return <Redirect to="/dashboard" />
+              break;
+              default:
+                return <Redirect to="/setup" />
+            }
+          } } />
         </div>
       </Router>
     );
