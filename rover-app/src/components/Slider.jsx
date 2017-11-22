@@ -1,7 +1,7 @@
 import React from 'react';
 import ImageSlide from './ImageSlide.jsx';
 
-console.log(globalConfig);
+console.log('SLIDER', globalConfig);
 
 // let slides = require("../assets/data/slide.json");
 import slides from '../assets/data/slide.js';

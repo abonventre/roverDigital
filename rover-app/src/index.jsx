@@ -2,7 +2,10 @@ import React from 'react';
 import {render} from 'react-dom';
 import AwesomeComponent from './components/AwesomeComponent.jsx';
 import Slider from './components/Slider.jsx';
-import { BrowserRouter as Router, Link, Route, Redirect } from 'react-router-dom';
+import Playlist from './components/Playlist.jsx';
+import Dashboard from './components/Dashboard.jsx';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+
 
 console.log(globalConfig);
 require('./assets/css/main.scss');
@@ -12,11 +15,8 @@ class App extends React.Component {
     return (
       <Router>
         <div>
-          <Link to='/'>Home</Link>
-          <Link to='/client'>Client</Link>
-          <p> Hello React Project</p>
-          <AwesomeComponent />
           <Route path="/client" component={ Slider } />
+          <Route path="/dashboard" component={ Dashboard } />
           <Route path="/" render={ ()=> {
             switch(globalConfig.mode) {
               case "client":
