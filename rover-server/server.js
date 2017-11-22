@@ -20,8 +20,11 @@ io.on('connection', (client) => {
 
 require('./routes').default(app);
 
+console.log(path.join(__dirname, '../rover-app/src'));
+
 app.use('/', express.static(path.join(__dirname, '../rover-app/src')));
 app.use('/', express.static(path.join(__dirname, '../rover-app/server-config')));
+// app.use('*', express.static(path.join(__dirname, '../rover-app/src')));
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, '../rover-app/src/index.html'));
 });

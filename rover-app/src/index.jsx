@@ -17,12 +17,14 @@ class App extends React.Component {
         <div>
           <Route path="/client" component={ Slider } />
           <Route path="/dashboard" component={ Dashboard } />
-          <Route path="/" render={ ()=> {
+          <Route exact path="/" render={ ()=> {
             switch(globalConfig.mode) {
               case "client":
+                console.log('Client');
                 return <Redirect to="/client" />
               break;
               case "server":
+                console.log('Server');
                 return <Redirect to="/dashboard" />
               break;
               default:
