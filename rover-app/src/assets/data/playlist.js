@@ -4,20 +4,21 @@ let playlist = {
   "slides": [
     {
       "slideID": 1,
-      "duration": 1000
+      "duration": 5000
     },
     {
       "slideID": 2,
-      "duration": 2000
+      "duration": 6000
     },
     {
       "slideID": 3,
-      "duration": 3000
+      "duration": 7000
     },
-    {
-      "slideID": 5,
-      "duration": 3000
-    }],
+    // {
+    //   "slideID": 5,
+    //   "duration": 3000
+    // }
+  ],
   "timestamp": "time",
   "version": 1
 }
