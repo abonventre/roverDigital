@@ -9,6 +9,8 @@ import playlist from '../assets/data/playlist.js';
 // import * as playlist from '../assets/data/playlist.json';
 console.log(playlist);
 
+require('../assets/css/Slider.scss');
+
 class Slider extends React.Component {
 
   constructor(props) {
@@ -69,7 +71,8 @@ class Slider extends React.Component {
         SlideID: { playlist.slides[this.state.slideCount].slideID }
         <br />
         { playlist.slides[this.state.slideCount].content.url }
-        <ImageSlide imageUrl={ playlist.slides[this.state.slideCount].content.url } />
+        {playlist.slides
+          .map((t, i) => <ImageSlide className={i == this.state.slideCount ? "visible" : "hidden"} key={ i } content={t.content} />)}
       </div>
     );//<VideoSlide videoUrl={ playlist.slides[this.state.slideCount].content.url } />
   }
