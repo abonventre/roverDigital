@@ -5,12 +5,17 @@ const path = require('path');
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 const mongoose = require('mongoose');
+import config from './config';
 
-mongoose.connect('mongodb://localhost/roverDigital-server');
+mongoose.connect('mongodb://localhost/roverDigital-server', config.mongo.options);
 mongoose.connection.on('error', function(err) {
   console.error(`MongoDB connection error: ${err}`);
   process.exit(-1);
 });
+
+if(config.seedDB) {
+  require('./config/seed');
+}
 
 io.on('connection', (client) => {
   client.on('connection', () => console.log('connection established'));

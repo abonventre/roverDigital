@@ -2,6 +2,8 @@
 
 import mongoose from 'mongoose';
 
+mongoose.Promise = global.Promise;
+
 var SlideSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -23,8 +25,7 @@ var SlideSchema = new mongoose.Schema({
       height: Number,
       width: Number
     },
-  },
+  }
+});
 
 export default mongoose.model('Slide', SlideSchema);
-
-//update for playlist model or Slides

@@ -5,6 +5,9 @@ const path = require('path');
 const port = 3010;
 const server = require('http').createServer(app);
 const socket = require('socket.io-client')(rover);
+import config from './config/environment';
+
+console.log(config);
 
 console.log(path.join(__dirname, 'src'));
 
