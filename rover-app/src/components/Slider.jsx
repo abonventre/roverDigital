@@ -9,7 +9,7 @@ import playlist from '../assets/data/playlist.js';
 // import * as playlist from '../assets/data/playlist.json';
 console.log(playlist);
 
-require('../assets/css/Slider.scss');
+import '../assets/css/Slider.scss';
 
 class Slider extends React.Component {
 
