@@ -5,7 +5,7 @@ import Slider from './components/Slider.jsx';
 import Playlist from './components/Playlist.jsx';
 import Dashboard from './components/Dashboard.jsx';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
-
+import 'bootstrap/dist/css/bootstrap.css';
 
 console.log(globalConfig);
 require('./assets/css/main.scss');
