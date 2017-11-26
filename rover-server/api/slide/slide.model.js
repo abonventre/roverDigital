@@ -14,17 +14,17 @@ var SlideSchema = new mongoose.Schema({
       type: String,
       required: true
     },
-    fileName: String,
-    timestamp: {
-      type: Date,
-      default: Date.now
-    },
-    version: Number,
-    orientation: String,
-    size: {
-      height: Number,
-      width: Number
-    },
+    fileName: String
+  },
+  timestamp: {
+    type: Date,
+    default: Date.now
+  },
+  version: Number,
+  orientation: String,
+  size: {
+    height: Number,
+    width: Number
   }
 });
 

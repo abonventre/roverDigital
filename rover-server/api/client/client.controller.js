@@ -1,6 +1,6 @@
 'use strict';
 
-import Playlist from './playlist.model';
+import Client from './client.model';
 
 const jsonpatch = require('fast-json-patch');
 
@@ -54,54 +54,54 @@ function handleError(res, statusCode) {
   };
 }
 
-// Gets a list of Playlists
+// Gets a list of Clients
 export function index(req, res) {
-  return Playlist.find().exec()
+  return Client.find().exec()
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
-// Gets a single Playlist from the DB
+// Gets a single Client from the DB
 export function show(req, res) {
-  return Playlist.findById(req.params.id).exec()
+  return Client.findById(req.params.id).exec()
     .then(handleEntityNotFound(res))
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
-// Creates a new Playlist in the DB
+// Creates a new Client in the DB
 export function create(req, res) {
-  return Playlist.create(req.body)
+  return Client.create(req.body)
     .then(respondWithResult(res, 201))
     .catch(handleError(res));
 }
 
-// Upserts the given Playlist in the DB at the specified ID
+// Upserts the given Client in the DB at the specified ID
 export function upsert(req, res) {
   if(req.body._id) {
     delete req.body._id;
   }
-  return Playlist.findOneAndUpdate({_id: req.params.id}, req.body, {new: true, upsert: true, setDefaultsOnInsert: true, runValidators: true}).exec()
+  return Client.findOneAndUpdate({_id: req.params.id}, req.body, {new: true, upsert: true, setDefaultsOnInsert: true, runValidators: true}).exec()
 
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
-// Updates an existing Playlist in the DB
+// Updates an existing Client in the DB
 export function patch(req, res) {
   if(req.body._id) {
     delete req.body._id;
   }
-  return Playlist.findById(req.params.id).exec()
+  return Client.findById(req.params.id).exec()
     .then(handleEntityNotFound(res))
     .then(patchUpdates(req.body))
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
-// Deletes a Playlist from the DB
+// Deletes a Client from the DB
 export function destroy(req, res) {
-  return Playlist.findById(req.params.id).exec()
+  return Client.findById(req.params.id).exec()
     .then(handleEntityNotFound(res))
     .then(removeEntity(res))
     .catch(handleError(res));

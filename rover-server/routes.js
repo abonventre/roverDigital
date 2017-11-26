@@ -9,4 +9,6 @@ export default function(app) {
     next();
   });
   app.use('/api/playlist', require('./api/playlist'));
+  app.use('/api/slide', require('./api/slide'));
+  app.use('/api/client', require('./api/client'));
 }

@@ -1,6 +1,8 @@
 'use strict';
+import Slide from './slide.model';
 
 const jsonpatch = require('fast-json-patch');
+
 
 function respondWithResult(res, statusCode) {
   statusCode = statusCode || 200;

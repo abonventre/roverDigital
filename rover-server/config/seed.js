@@ -9,12 +9,58 @@ import Slide from '../api/slide/slide.model';
 
 import mongoose from 'mongoose';
 
-let ObjectId = mongoose.Schema.Types.ObjectId;
+let ObjectId = mongoose.Types.ObjectId;
+
+Slide.find({}).remove()
+  .then(() => {
+    Slide.create({
+      "_id": new ObjectId("54cd6669d3e0fb1b302e54e6"),
+      "name": "sunset",
+      "content": {
+        "type": "image",
+        "fileName": "assets/img/rocks.jpg"
+      },
+      "version": 1,
+      "orientation": "landscape",
+      "size": {
+        "height": 1080,
+        "width": 1920
+      }
+    },
+    {
+      "_id": new ObjectId("54cd6669d3e0fb1b302e54e4"),
+      "name": "FIWT",
+      "content": {
+        "type": "image",
+        "fileName": "assets/img/yosemite.jpg"
+      },
+      "version": 1,
+      "orientation": "landscape",
+      "size": {
+        "height": 1080,
+        "width": 1920
+      }
+    },
+    {
+      "_id": new ObjectId("54cd6669d3e0fb1b302e54e8"),
+      "name": "FI",
+      "content": {
+        "type": "image",
+        "fileName": "assets/img/flowers.jpg"
+      },
+      "version": 1,
+      "orientation": "landscape",
+      "size": {
+        "height": 1080,
+        "width": 1920
+      }
+    });
+  });
 
 Playlist.find({}).remove()
   .then(() => {
     Playlist.create({
-      "_id": ObjectId("54cd6669d3e0fb1b302e54e6"),
+      "_id": new ObjectId("54cd6669d3e0fb1b302e54e6"),
       "name": "Main Terminal",
       "slides": [
         {
@@ -33,49 +79,3 @@ Playlist.find({}).remove()
       "version": 1
     });
   });
-
-  Slide.find({}).remove()
-    .then(() => {
-      Slide.create({
-        "_id": ObjectId("54cd6669d3e0fb1b302e54e6"),
-        "name": "sunset",
-        "content": {
-          "type": "image",
-          "url": "assets/img/rocks.jpg"
-        },
-        "version": 1,
-        "orientation": "landscape",
-        "size": {
-          "height": 1080,
-          "width": 1920
-        }
-      },
-      {
-        "_id": ObjectId("54cd6669d3e0fb1b302e54e4"),
-        "name": "FIWT",
-        "content": {
-          "type": "image",
-          "url": "assets/img/yosemite.jpg"
-        },
-        "version": 1,
-        "orientation": "landscape",
-        "size": {
-          "height": 1080,
-          "width": 1920
-        }
-      },
-      {
-        "_id":  ObjectId("54cd6669d3e0fb1b302e54e8"),
-        "name": "FI",
-        "content": {
-          "type": "image",
-          "url": "assets/img/flowers.jpg"
-        },
-        "version": 1,
-        "orientation": "landscape",
-        "size": {
-          "height": 1080,
-          "width": 1920
-        }
-      });
-    });
