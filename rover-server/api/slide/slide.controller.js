@@ -56,7 +56,11 @@ function handleError(res, statusCode) {
 
 // Gets a list of Slides
 export function index(req, res) {
-  return Slide.find().exec()
+  console.log(req.query);
+  let query = {};
+  req.query.name ? query.name = req.query.name : null;
+  req.query.orientation ? query.orientation = req.query.orientation : null;
+  return Slide.find(query).exec()
     .then(respondWithResult(res))
     .catch(handleError(res));
 }

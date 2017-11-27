@@ -1,5 +1,5 @@
 import React from 'react';
-import ImageSlide from './ImageSlide.jsx';
+import ImageSlide from './ImageSlide';
 
 console.log('SLIDER', globalConfig);
 

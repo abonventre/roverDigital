@@ -1,9 +1,9 @@
 import React from 'react';
-import AwesomeComponent from './AwesomeComponent.jsx';
-import Playlist from './Playlist.jsx';
-import Client from './Client.jsx';
-import Slide from './Slide.jsx';
-import User from './User.jsx';
+import AwesomeComponent from './AwesomeComponent';
+import Playlist from './Playlist';
+import Client from './Client';
+import Slide from './Slide';
+import User from './User';
 import { Route, Link } from 'react-router-dom';
 import {
   Collapse,
