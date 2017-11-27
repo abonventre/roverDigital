@@ -1,14 +1,12 @@
 'use strict';
 
 const express = require('express');
-const controller = require('./playlist.controller');
+const controller = require('./slide.controller');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.json({'test':'testing'});
-});
-// router.get('/:id', controller.show);
+router.get('/', controller.index);
+router.get('/:id', controller.show);
 // router.post('/', controller.create);
 // router.put('/:id', controller.upsert);
 // router.patch('/:id', controller.patch);

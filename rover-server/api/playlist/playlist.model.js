@@ -2,13 +2,18 @@
 
 import mongoose from 'mongoose';
 
+mongoose.Promise = global.Promise;
+
 var PlaylistSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true
   },
   slides: [{
-    slideId: ObjectId,
+    slideId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Slide'
+    },
     duration: Number
   }],
   timestamp: {

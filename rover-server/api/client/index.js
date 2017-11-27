@@ -1,7 +1,7 @@
 'use strict';
 
 const express = require('express');
-const controller = require('./playlist.controller');
+const controller = require('./client.controller');
 
 const router = express.Router();
 
